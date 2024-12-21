@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import Hamburger from '../button/Hamburger';
+import ToggleBtn from '../button/ToggleBtn';
 
 const MenuItems = [
   {
@@ -59,12 +60,15 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <Link
-          className='px-3 py-2 rounded bg-primary dark:bg-secondary font-semibold text-white uppercase'
-          href={'/login'}
-        >
-          Login
-        </Link>
+        <div className='flex gap-x-3 items-center'>
+          <ToggleBtn />
+          <Link
+            className='px-3 py-2 rounded bg-primary dark:bg-secondary font-semibold text-white uppercase'
+            href={'/login'}
+          >
+            Login
+          </Link>
+        </div>
 
         <button onClick={handleClick} className='block md:hidden'>
           <Hamburger />
